@@ -1,0 +1,151 @@
+.s-main {
+  width: 100%;
+  min-height: 585px;
+
+  background-color: #5f3ca1;
+
+  .container {
+    @include s-container;
+
+    header {
+      width: 100%;
+      height: 120px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .brand {
+        display: flex;
+        align-items: center;
+      }
+
+      nav {
+        font-family: "Lato", sans-serif;
+
+        ul {
+          display: flex;
+          gap: 56px;
+
+          li {
+            a {
+              display: flex;
+
+              color: #fff;
+
+              text-decoration: none;
+
+              transition: all 0.25s;
+
+              span {
+                margin-right: 16px;
+              }
+
+              &:hover {
+                color: #ffbf00;
+              }
+            }
+          }
+        }
+
+        @include responsive(1024px) {
+          display: none;
+        }
+      }
+    }
+
+    .wrapper {
+      display: flex;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+
+        color: #fff;
+
+        .headline {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          h1 {
+            @include s-headline(48px);
+          }
+
+          p {
+            font-family: "Lato", sans-serif;
+            font-size: 18px;
+          }
+        }
+
+        .action {
+          a {
+            width: 240px;
+            padding: 16px;
+            border-radius: 6px;
+
+            display: flex;
+            justify-content: center;
+
+            font-family: "PT Sans", sans-serif;
+            font-weight: 700;
+            color: #5f3ca1;
+
+            background-color: #ffbf00;
+            text-decoration: none;
+
+            transition: all 0.25s;
+
+            &:hover {
+              filter: brightness(0.75);
+            }
+          }
+        }
+
+        .down-arrow {
+          font-family: "Lato", sans-serif;
+          font-weight: 700;
+
+          display: flex;
+          align-items: center;
+
+          span {
+            margin-right: 16px;
+          }
+        }
+
+        @include responsive(1024px) {
+          text-align: center;
+          align-items: center;
+        }
+      }
+
+      .illustration {
+        width: 100%;
+
+        img {
+          width: 100%;
+          transform: translateY(80px);
+
+          @include responsive(1024px) {
+            transform: translateY(25px);
+          }
+        }
+      }
+
+      @include responsive(1024px) {
+        flex-direction: column;
+      }
+    }
+
+    @include responsive(1024px) {
+      width: 100%;
+      padding: 0 24px;
+    }
+  }
+
+  @include responsive(1024px) {
+    height: auto;
+  }
+}

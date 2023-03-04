@@ -1,0 +1,129 @@
+.s-benefits {
+  min-height: 700px;
+
+  display: flex;
+  align-items: center;
+
+  .container {
+    @include s-container;
+
+    display: flex;
+    flex-direction: column;
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        @include s-headline(32px, #453f51);
+
+        width: 512px;
+
+        @include responsive(1024px) {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      p {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        color: #5e5570;
+      }
+
+      @include responsive(1024px) {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+
+    ul {
+      margin-top: 48px;
+
+      display: flex;
+      gap: 48px;
+
+      li {
+        min-height: 320px;
+        border-radius: 12px;
+        padding: 24px;
+
+        display: flex;
+        flex-direction: column;
+
+        box-sizing: border-box;
+
+        .icon-wrapper {
+          width: 64px;
+          height: 64px;
+          border-radius: 16px;
+          margin-bottom: 24px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          background-color: #c5bedc45;
+
+          @include responsive(1024px) {
+            flex-shrink: 0;
+          }
+        }
+
+        p {
+          font-family: "Lato", sans-serif;
+
+          &:first-of-type {
+            margin-bottom: 16px;
+
+            font-weight: 700;
+            font-size: 18px;
+            color: #5f3ca1;
+          }
+
+          &:last-of-type {
+            font-weight: 400;
+            color: #5e5570;
+
+            line-height: 24px;
+          }
+        }
+
+        &:first-of-type {
+          background-color: #c5bedc45;
+
+          .icon-wrapper {
+            background-color: #fff;
+          }
+
+          @include responsive(1024px) {
+            padding: 32px;
+            border-radius: 0;
+          }
+        }
+
+        @include responsive(1024px) {
+          min-height: auto;
+          padding: 32px;
+
+          flex-direction: row;
+          gap: 24px;
+        }
+      }
+
+      @include responsive(1024px) {
+        flex-direction: column;
+      }
+    }
+
+    @include responsive(1024px) {
+      width: 100%;
+      padding: 64px 0;
+    }
+  }
+
+  @include responsive(1024px) {
+    min-height: auto;
+  }
+}
